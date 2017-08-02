@@ -12,31 +12,32 @@
 
 
 function handValue (hand) {
-let newHand = [];
- for (let i = 0; i < hand.length; i++) {
+  let total= 0;
+  let ace = [];
+
+  for (let i = 0; i < hand.length; i++) {
+   if (hand[i]==='A'){
+     ace.push(hand[i]);
+     continue;
+   }
 
    if (hand[i]=== 'J'|| hand[i]=== 'Q' || hand[i]=== 'K'){
-     newHand.push(10);
+     total += 10;
+     continue;
    }
+  total += parseInt(hand[i]);
+ }
 
-   else if (hand[i]==='A'){
-     
+ for (var i = 0; i < ace.length; i++) {
+   if (total >= 11){
+     total += 1;
    }
    else {
-    newHand.push(parseInt(hand[i],10));
-  }
-
- }
-
- let total= 0;
- for (let i = 0; i < newHand.length; i++) {
-   total += newHand[i];
+     total += 11;
+   }
  }
 return total;
-
 }
-
-// sum += parseInt(hand[i],10);
 
 /* -----  Hints ------
 

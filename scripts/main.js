@@ -9,16 +9,34 @@
    write your logic.
 */
 
-let hand = [];
+
 
 function handValue (hand) {
- for (var i = 0; i < hand.length; i++) {
-   parseInt(hand[i],10);
+let newHand = [];
+ for (let i = 0; i < hand.length; i++) {
+
+   if (hand[i]=== 'J'|| hand[i]=== 'Q' || hand[i]=== 'K'){
+     newHand.push(10);
+   }
+
+   else if (hand[i]==='A'){
+     
+   }
+   else {
+    newHand.push(parseInt(hand[i],10));
+  }
+
  }
 
-  return;
+ let total= 0;
+ for (let i = 0; i < newHand.length; i++) {
+   total += newHand[i];
+ }
+return total;
+
 }
-console.log(hand);
+
+// sum += parseInt(hand[i],10);
 
 /* -----  Hints ------
 
